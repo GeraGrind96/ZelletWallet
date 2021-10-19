@@ -10,8 +10,8 @@ from transaction import Transaction
 from wallet import Wallet
 
 pnconfig = PNConfiguration()
-pnconfig.subscribe_key = 'sub-c-af3ef0a0-0a7e-11ec-8e18-0664d1b72b66'
-pnconfig.publish_key = 'pub-c-83008083-ffb0-45d9-8e08-c48a2ef822ad'
+pnconfig.subscribe_key = ''
+pnconfig.publish_key = ''
 pnconfig.ssl = True
 
 CHANNELS = {
