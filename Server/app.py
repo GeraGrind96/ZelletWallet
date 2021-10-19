@@ -354,7 +354,7 @@ def enviar_correo(correo_receptor, nombre_receptor):
 
     message = EmailMessage()
 
-    sender = "zelletwallet@gmail.com"
+    sender = ""
     recipient = correo_receptor
     body_of_email = "Hola "+nombre_receptor+". Tu monedero de Zellets ha sido confirmado."
     message['From'] = sender
@@ -365,7 +365,7 @@ def enviar_correo(correo_receptor, nombre_receptor):
     message.set_content(body_of_email)
 
     s = smtplib.SMTP_SSL(host = "smtp.gmail.com", port = 465)
-    s.login(sender, password = "TelLez2021.")
+    s.login(sender, password = "")
     s.send_message(message)
     s.quit()
 
@@ -383,7 +383,7 @@ def recuperar_datos():
 
             message = EmailMessage()
 
-            sender = "zelletwallet@gmail.com"
+            sender = ""
             recipient = correo_user
             body_of_email = "Hola "+user["nombre"]+". Estos son los datos de tu cuenta: \n - Nombre de usuario: " + user["nombre"]+"\n - Contraseña: "+ user["contrasena"]
             message['From'] = sender
@@ -394,7 +394,7 @@ def recuperar_datos():
             message.set_content(body_of_email)
 
             s = smtplib.SMTP_SSL(host = "smtp.gmail.com", port = 465)
-            s.login(sender, password = "TelLez2021.")
+            s.login(sender, password = "")
             s.send_message(message)
             s.quit()    
             return "existe"
@@ -403,8 +403,8 @@ def recuperar_datos():
 def bot_send_text():
 
     bot_message = "Hay un nuevo usuario pendiente de confirmación"
-    bot_token = '1784796735:AAGtcZtAfngDY224mkmdFFd3Okxfeyj5Hvs'
-    bot_chatID = '1516729742'
+    bot_token = ''
+    bot_chatID = ''
     send_text = 'https://api.telegram.org/bot' + bot_token + '/sendMessage?chat_id=' + bot_chatID + '&parse_mode=Markdown&text=' + bot_message
 
     requests.get(send_text)
